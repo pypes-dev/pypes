@@ -34,9 +34,9 @@ export function NxWelcome() {
           <div className="text-container">
             <h2>
               <BadgeCheck size={32} color="#10b981" style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} />
-              <span>We're up and running</span>
+              <span> Take our quiz to find out what you need to do next</span>
             </h2>
-            <Link to="/form"> What&apos;s next? </Link>
+            <Link to="/form"> Take the quiz </Link>
           </div>
           <div className="logo-container">
             <img src={landingPageLogo} width={"80%"} />
@@ -74,7 +74,7 @@ export function NxWelcome() {
 
             <div style={{ marginTop: '2rem', fontWeight: 'bold', fontSize: '1.1em', color: '#444' }}>Services</div>
             <LearningCard
-              href="#"
+              href="https://www.solidustitan.com#"
               icon={
                 <Star size={24} color="#4c5154" />
               }
@@ -83,7 +83,7 @@ export function NxWelcome() {
             />
 
             <LearningCard
-              href="#"
+              href="https://www.solidustitan.com"
               icon={
                 <Globe size={24} color="#8e44ad" />
               }
@@ -91,7 +91,7 @@ export function NxWelcome() {
               description={"Custom sites & forms"}
             />
             <LearningCard
-              href="#"
+              href="https://www.solidustitan.com"
               icon={
                 <CloudLightning size={24} color="#4c5154" />
               }
@@ -100,7 +100,7 @@ export function NxWelcome() {
             />
 
             <LearningCard
-              href="https://github.com/pypesdev/jobs"
+              href="https://github.com/pypes-dev/jobs"
               icon={
                 <Send size={24} color="#f3b700" />
               }
@@ -132,6 +132,35 @@ export function NxWelcome() {
         <div id="commands" className="rounded shadow" style={{ display: 'block' }}>
           <h2>Next steps</h2>
           <p>Here are some things you can do</p>
+          <NextStepAccordion
+            icon={'📝'}
+            title={<span style={{ padding: '0 0.3rem' }}>Take the Quiz</span>}
+          >
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem', padding: '1rem 0', background: '#fff', borderRadius: '0.75rem', boxShadow: '0 1px 4px rgba(0,0,0,0.03)', marginTop: '0.5rem', width: '100%' }}>
+              <span style={{ fontSize: '1.05rem', color: '#2563eb', fontWeight: 600, marginBottom: '0.5rem' }}>
+                Personalize your AI journey and discover new ways to make more money!
+              </span>
+              <Link
+                to="/form"
+                style={{
+                  display: 'inline-block',
+                  background: 'linear-gradient(90deg, #2563eb 0%, #10b981 100%)',
+                  color: '#fff',
+                  fontWeight: 700,
+                  fontSize: '1.05rem',
+                  padding: '0.7em 2em',
+                  borderRadius: 10,
+                  boxShadow: '0 2px 8px 0 #2563eb22',
+                  textDecoration: 'none',
+                  transition: 'background .15s',
+                  marginTop: 8,
+                }}
+                aria-label="Start the AI Quiz"
+              >
+                Start the Quiz →
+              </Link>
+            </div>
+          </NextStepAccordion>
           <NextStepAccordion
             icon={
               '📱'
