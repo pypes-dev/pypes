@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ExperienceLevel, CustomerType } from "./Form";
+import { useNavigate } from "react-router-dom";
 
 const services = [
     {
@@ -24,6 +25,14 @@ const services = [
         longDescription:
             'Streamline your operations with automated online scheduling. Clients can book appointments 24/7, receive reminders, and reschedule with ease. Our system integrates with your calendar, reduces no-shows, and helps you manage your time efficiently so you can focus on delivering quality service.',
         key: 'scheduling',
+        tags: ['grow'],
+    },
+    {
+        title: 'Interview Scheduling',
+        description: 'Book More, Stress Less',
+        longDescription:
+            'Streamline your interview process with automated online scheduling. Interviewers can book appointments 24/7, receive reminders, and reschedule with ease. Our system integrates with your calendar, reduces no-shows, and helps you manage your time efficiently so you can focus on delivering quality service.',
+        key: 'interview_scheduling',
         tags: ['grow'],
     },
     {
@@ -83,12 +92,39 @@ const matrix: Record<string, Record<string, string[]>> = {
     [CustomerType.GET_A_HIGH_PAYING_JOB]: {
         [ExperienceLevel.BEGINNER]: ['resume', 'job_bot'],
         [ExperienceLevel.INTERMEDIATE]: ['resume', 'job_bot', 'phone_assist'],
-        [ExperienceLevel.EXPERT]: ['job_bot', 'phone_assist', 'scheduling'],
+        [ExperienceLevel.EXPERT]: ['job_bot', 'phone_assist', 'interview_scheduling'],
     },
 };
 
 
 export const LandingTargeted = () => {
+    const navigate = useNavigate();
+    // Go Back to Quiz Button
+    const GoBackButton = () => (
+        <button
+            onClick={() => navigate('/form')}
+            style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                background: 'linear-gradient(90deg, #2563eb 0%, #10b981 100%)',
+                color: '#fff',
+                fontWeight: 700,
+                fontSize: '1rem',
+                padding: '0.7em 1.5em',
+                borderRadius: 8,
+                border: 'none',
+                boxShadow: '0 1px 6px 0 #2563eb22',
+                cursor: 'pointer',
+                margin: '1.2rem 0',
+                transition: 'background .15s',
+            }}
+            aria-label="Back to Quiz"
+        >
+            ← Back to Quiz
+        </button>
+    );
+
     const params = new URLSearchParams(window.location.search);
     const customerType = params.get('customerType') ?? CustomerType.GET_A_HIGH_PAYING_JOB as CustomerType;
     const experienceLevel = params.get('experienceLevel') ?? ExperienceLevel.BEGINNER as ExperienceLevel;
@@ -340,6 +376,9 @@ export const LandingTargeted = () => {
                         }
                     }
                 `}</style>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+                <GoBackButton />
             </div>
         </>
     );

@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  slurp:
+    build:
+      context: slurp/
+      dockerfile: Dockerfile
+    ports:
+      - '8888:8888'
+    volumes:
+      - .:/app
+    environment:
+      DATABASE_URL: postgres://user:password@pypes_postgres:5432/mydatabase?sslmode=disable
+      REDIS_URL: redis:6379
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+    depends_on:
+      - pypes_postgres
+    working_dir: /app/slurp
+    command: /go/bin/CompileDaemon --build="go build -o app/main" --command="./app/main serve"
+    networks:
+      - grid-network
+
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis-data:/data
+    networks:
+      - grid-network
+
+  pypes_postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: user
+      POSTGRES_DB: mydatabase
+    ports:
+      - '54320:5432'
+    volumes:
+      - pypes-postgres:/var/lib/postgresql/data
+    networks:
+      - grid-network
+
+networks:
+  grid-network:
+volumes:
+  pypes-postgres:
+  redis-data:
