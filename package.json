@@ -1,0 +1,9 @@
+{
+    "name": "pypes",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "workspaces": [
+        "./dev-landing-page"
+    ]
+}
