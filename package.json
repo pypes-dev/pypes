@@ -4,6 +4,11 @@
     "private": true,
     "type": "module",
     "workspaces": [
-        "./dev-landing-page"
-    ]
+        "./quiz",
+        "./landing"
+    ],
+    "scripts": {
+        "dev": "docker compose up -d && npm run dev -w ./landing & npm run dev -w ./quiz",
+        "run": "./app/main serve"
+    }
 }
