@@ -169,10 +169,10 @@ export function NxWelcome() {
           >
 
             <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', width: '100%' }}>
-              <a href="https://apps.apple.com/app/idYOUR_APP_ID" target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
+              <a href="https://apps.apple.com/app/pypes-ai-paper-trail/id6748501122" target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" style={{ height: '44px', maxWidth: '160px', width: '100%' }} />
               </a>
-              <a href="https://play.google.com/store/apps/details?id=YOUR_APP_ID" target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
+              <a href="https://play.google.com/store/apps/details?id=com.pypes.ai.papertrail" target="_blank" rel="noreferrer" style={{ display: 'inline-block' }}>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" style={{ height: '44px', maxWidth: '160px', width: '100%' }} />
               </a>
             </div>
