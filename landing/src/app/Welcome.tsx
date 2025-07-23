@@ -19,7 +19,7 @@ import LearningCard from "../components/learningCard";
 import { Link } from "react-router-dom";
 
 export function NxWelcome() {
-  const quizUrl = 'http://localhost:6969'
+  const quizUrl = 'https://app.pypes.dev'
   return (
     <div className="wrapper">
       <div className="container">
@@ -140,8 +140,8 @@ export function NxWelcome() {
               <span style={{ fontSize: '1.05rem', color: '#2563eb', fontWeight: 600, marginBottom: '0.5rem' }}>
                 Personalize your AI journey and discover new ways to make more money!
               </span>
-              <Link
-                to="/form"
+              <a
+                href={quizUrl}
                 style={{
                   display: 'inline-block',
                   background: 'linear-gradient(90deg, #2563eb 0%, #10b981 100%)',
@@ -158,7 +158,7 @@ export function NxWelcome() {
                 aria-label="Start the AI Quiz"
               >
                 Start the Quiz →
-              </Link>
+              </a>
             </div>
           </NextStepAccordion>
           <NextStepAccordion
