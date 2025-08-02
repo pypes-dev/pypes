@@ -19,7 +19,7 @@ import LearningCard from "../components/learningCard";
 import { Link } from "react-router-dom";
 
 export function NxWelcome() {
-  const quizUrl = 'https://app.pypes.dev'
+  const quizUrl = 'https://quiz.pypes.dev'
   return (
     <div className="wrapper">
       <div className="container">
@@ -242,7 +242,7 @@ export function NxWelcome() {
             }}>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center', width: '100%', alignItems: 'center' }}>
                 <a
-                  href="https://app.pypes.dev"
+                  href="https://quiz.pypes.dev"
                   style={{
                     display: 'inline-block',
                     background: '#1a3458',
