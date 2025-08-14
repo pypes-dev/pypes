@@ -67,7 +67,7 @@ const PricingSection = () => {
         { text: "Basic website", included: true },
         { text: "Email support", included: true },
         { text: "Lead capture form", included: true },
-        { text: "Google My Business setup", included: false },
+        { text: "Google My Business setup", included: true },
       ],
       buttonText: "Get Started",
       stripeUrl: "https://buy.stripe.com/aFaaEQaPKgHZcQs6Wo2oE05",
