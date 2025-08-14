@@ -16,13 +16,13 @@ const LearningCard: React.FC<LearningCardProps> = ({
     href,
     className = "list-item-link",
 }) => (
-    <a href={href} target="_blank" rel="noreferrer" className={className}>
+    <div className={className}>
         {icon}
         <span>
             {title}
             {description && <span>{description}</span>}
         </span>
-    </a>
+    </div>
 );
 
 export default LearningCard;
