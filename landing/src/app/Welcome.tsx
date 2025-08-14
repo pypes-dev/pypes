@@ -130,7 +130,7 @@ const PricingSection = () => {
           <div className="funnel-steps">
             <div className="funnel-step">
               <span className="funnel-number">1</span>
-              <span>Capture Leads</span>
+              <span>Funnel Internet Traffic</span>
             </div>
             <div className="funnel-arrow">→</div>
             <div className="funnel-step">
