@@ -462,6 +462,242 @@ summary svg {
     margin-top: -0.25rem;
 }
 
+/* Pricing Section */
+.pricing-section {
+  padding: 2rem 1rem 4rem;
+  text-align: center;
+  background-color: #f8fafc;
+  margin: 2rem auto;
+  border-radius: 0.75rem;
+  max-width: 1400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pricing-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+  color: #64748b;
+  font-size: 1.125rem;
+  margin-bottom: 3rem;
+}
+
+.funnel-container {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.funnel {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.funnel-top {
+  margin-bottom: 2rem;
+}
+
+.funnel-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.funnel-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 150px;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.funnel-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: #3b82f6;
+  color: white;
+  border-radius: 50%;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.funnel-arrow {
+  color: #94a3b8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+}
+
+.pricing-tiers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pricing-tier {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.pricing-tier.recommended {
+  border: 2px solid #3b82f6;
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -12px;
+  right: 2rem;
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.pricing-tier h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #3b82f6;
+  margin: 1rem 0;
+}
+
+.pricing-tier p {
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  min-height: 3rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  text-align: left;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #475569;
+}
+
+.features-list li.included {
+  color: #1e293b;
+}
+
+.features-list li.excluded {
+  color: #cbd5e1;
+  text-decoration: line-through;
+}
+
+.features-list svg {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.features-list .included svg {
+  color: #10b981;
+}
+
+.features-list .excluded svg {
+  color: #e2e8f0;
+}
+
+.pricing-button {
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.pricing-button.recommended {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.pricing-button:not(.recommended):hover {
+  background-color: #e2e8f0;
+}
+
+.pricing-button.recommended:hover {
+  background-color: #2563eb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .pricing-tiers {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+  
+  .funnel-step {
+    min-width: 120px;
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .funnel-arrow {
+    transform: rotate(90deg);
+    padding: 0.5rem 0;
+  }
+  
+  .funnel-steps {
+    flex-direction: column;
+  }
+  
+  .pricing-section {
+    padding: 2rem 0.5rem;
+  }
+}
+
 @media screen and (min-width: 768px) {
     #hero {
         grid-template-columns: repeat(2, minmax(0, 1fr));
