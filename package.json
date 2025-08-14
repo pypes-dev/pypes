@@ -5,7 +5,8 @@
     "type": "module",
     "workspaces": [
         "./quiz",
-        "./landing"
+        "./landing",
+        "./next-landing"
     ],
     "scripts": {
         "dev": "docker compose up -d && npm run dev -w ./landing & npm run dev -w ./quiz",
