@@ -1,24 +1,10 @@
+import Image from "next/image";
+import { BadgeCheck, Calendar, Check, CloudLightning, Github, Globe, Heart, Link, Phone, Star, TrendingUp, X } from 'lucide-react';
+import CopyCommandButton from "@/components/copyCommand";
+import InfoCard from "@/components/infoCard";
+import LearningCard from "@/components/learningCard";
+import { NextStepAccordion } from "@/components/nextStep";
 import landingPageLogo from "../assets/wavy_p.jpg";
-import { NextStepAccordion } from "../../../next-landing/src/components/nextStep";
-import {
-  BadgeCheck,
-  Phone,
-  Star,
-  Calendar,
-  Globe,
-  TrendingUp,
-  CloudLightning,
-  Heart,
-  Github,
-  Check,
-  X,
-} from 'lucide-react';
-import "./Welcome.css";
-import CopyCommandButton from "../../../next-landing/src/components/copyCommand";
-import InfoCard from "../../../next-landing/src/components/infoCard";
-import LearningCard from "../../../next-landing/src/components/learningCard";
-import { Link } from "react-router-dom";
-
 interface PricingFeature {
   text: string;
   included: boolean;
@@ -33,28 +19,6 @@ interface PricingTier {
   recommended: boolean;
   stripeUrl: string;
 }
-
-const PricingTierCard = ({ tier }: { tier: PricingTier }) => (
-  <div className={`pricing-tier ${tier.recommended ? 'recommended' : ''}`}>
-    {tier.recommended && <div className="recommended-badge">Popular</div>}
-    <h3>{tier.title}</h3>
-    <div className="price">{tier.price}</div>
-    <p>{tier.description}</p>
-    <ul className="features-list">
-      {tier.features.map((feature, index) => (
-        <li key={index} className={feature.included ? 'included' : 'excluded'}>
-          {feature.included ? <Check size={16} /> : <X size={16} />}
-          <span>{feature.text}</span>
-        </li>
-      ))}
-    </ul>
-    <a href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
-      <button className={`pricing-button ${tier.recommended ? 'recommended' : ''}`}>
-        {tier.buttonText}
-      </button>
-    </a>
-  </div>
-);
 
 const PricingSection = () => {
   const tiers: PricingTier[] = [
@@ -152,8 +116,28 @@ const PricingSection = () => {
     </section>
   );
 };
-
-export function NxWelcome() {
+const PricingTierCard = ({ tier }: { tier: PricingTier }) => (
+  <div className={`pricing-tier ${tier.recommended ? 'recommended' : ''}`}>
+    {tier.recommended && <div className="recommended-badge">Popular</div>}
+    <h3>{tier.title}</h3>
+    <div className="price">{tier.price}</div>
+    <p>{tier.description}</p>
+    <ul className="features-list">
+      {tier.features.map((feature, index) => (
+        <li key={index} className={feature.included ? 'included' : 'excluded'}>
+          {feature.included ? <Check size={16} /> : <X size={16} />}
+          <span>{feature.text}</span>
+        </li>
+      ))}
+    </ul>
+    <a href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
+      <button className={`pricing-button ${tier.recommended ? 'recommended' : ''}`}>
+        {tier.buttonText}
+      </button>
+    </a>
+  </div>
+);
+export default function Home() {
   const quizUrl = 'https://quiz.pypes.dev'
   return (
     <div className="wrapper">
@@ -174,7 +158,7 @@ export function NxWelcome() {
             <Link to={quizUrl}> Take the quiz </Link>
           </div>
           <div className="logo-container">
-            <img src={landingPageLogo} width={"80%"} />
+            <Image src={landingPageLogo} alt="Wavy Pypes Logo" style={{ width: '80%', height: 'auto' }} />
           </div>
         </div>
 
@@ -236,7 +220,7 @@ export function NxWelcome() {
             <InfoCard
               id="nx-cloud"
               className="rounded shadow"
-              onClick={() => window.location.href = quizUrl}
+              // onClick={() => window.location.href = quizUrl}
               icon={<CloudLightning size={24} color="#4c5154" />}
               title={"AI moves fast!"}
               subtitle={"move faster"}
@@ -428,5 +412,3 @@ export function NxWelcome() {
     </div>
   );
 }
-
-export default NxWelcome;

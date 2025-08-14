@@ -25,5 +25,5 @@
   },
   "include": [
     "src"
-  ]
+, "../next-landing/src/components/copyCommand.tsx", "../next-landing/src/components/infoCard.tsx", "../next-landing/src/components/learningCard.tsx", "../next-landing/src/components/nextStep.tsx"  ]
 }

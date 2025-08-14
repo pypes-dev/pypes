@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, type ReactNode } from "react";
 
 interface NextStepAccordionProps {

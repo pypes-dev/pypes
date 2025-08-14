@@ -1,5 +1,5 @@
+"use client"
 import { useState } from "react";
-
 const CopyCommandButton = ({ command }: { command: string }) => {
     const [copied, setCopied] = useState(false);
     return (
