@@ -7,7 +7,6 @@ import {
   Calendar,
   Globe,
   TrendingUp,
-  Send,
   CloudLightning,
   Heart,
   Github,
@@ -368,7 +367,7 @@ export function NxWelcome() {
             }}>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center', width: '100%', alignItems: 'center' }}>
                 <a
-                  href="https://quiz.pypes.dev"
+                  href="https://crm.pypes.dev"
                   style={{
                     display: 'inline-block',
                     background: '#1a3458',
