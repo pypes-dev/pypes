@@ -46,7 +46,7 @@ export const PostHero: React.FC<{
             {hasAuthors && (
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1">
-                  <p className="text-sm">Authord by</p>
+                  <p className="text-sm">Author</p>
 
                   <p>{formatAuthors(populatedAuthors)}</p>
                 </div>

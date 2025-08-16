@@ -11,5 +11,8 @@
     "scripts": {
         "dev": "docker compose up -d && npm run dev -w ./landing & npm run dev -w ./quiz",
         "run": "./app/main serve"
+    },
+    "dependencies": {
+        "@payloadcms/storage-s3": "^3.52.0"
     }
 }
