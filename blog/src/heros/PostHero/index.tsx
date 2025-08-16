@@ -14,6 +14,11 @@ export const PostHero: React.FC<{
   const hasAuthors =
     populatedAuthors && populatedAuthors.length > 0 && formatAuthors(populatedAuthors) !== ''
 
+  let tmpImage = heroImage
+  if (!heroImage) {
+    tmpImage = { url: 'https://cdn.allthepics.net/images/2025/08/16/wavy_p-1200x630.jpg', alt: 'Wavy Pypes Logo' }
+  }
+  console.log("tmpImage", tmpImage)
   return (
     <div className="relative -mt-[10.4rem] flex items-end">
       <div className="container z-10 relative lg:grid lg:grid-cols-[1fr_48rem_1fr] text-white pb-8">
@@ -63,9 +68,7 @@ export const PostHero: React.FC<{
         </div>
       </div>
       <div className="min-h-[80vh] select-none">
-        {heroImage && typeof heroImage !== 'string' && (
-          <Media fill priority imgClassName="-z-10 object-cover" resource={heroImage} />
-        )}
+        <Media fill priority imgClassName="-z-10 object-cover" resource={tmpImage} />
         <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
       </div>
     </div>

@@ -11,7 +11,7 @@ import { BlogPosts } from "@/components/RecentBlogPosts";
 
 export default async function Home() {
   const latestPosts = await getLatestPosts(3);
-
+  console.log('~latestPosts ', latestPosts)
   return (
     <div className="wrapper">
       <div className="container">

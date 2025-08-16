@@ -28,7 +28,6 @@ export const MediaBlock: React.FC<Props> = (props) => {
     staticImage,
     disableInnerContainer,
   } = props
-
   let caption
   if (media && typeof media === 'object') caption = media.caption
 
