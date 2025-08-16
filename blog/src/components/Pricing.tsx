@@ -23,10 +23,10 @@ export const PricingSection = () => {
             price: "$250/month",
             description: "Perfect for small businesses getting started with automation.",
             features: [
-                { text: "Basic website", included: true },
-                { text: "Email support", included: true },
-                { text: "Lead capture form", included: true },
                 { text: "Google My Business setup", included: true },
+                { text: "Basic website", included: true },
+                { text: "Lead capture form", included: true },
+                { text: "Appointment Scheduling Automation", included: true },
             ],
             buttonText: "Get Started",
             stripeUrl: "https://buy.stripe.com/aFaaEQaPKgHZcQs6Wo2oE05",
