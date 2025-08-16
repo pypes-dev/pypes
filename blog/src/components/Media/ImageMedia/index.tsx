@@ -37,16 +37,17 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
 
   console.log("src", src)
 
-  if (!src && resource && typeof resource === 'object') {
-    const { alt: altFromResource, height: fullHeight, url, width: fullWidth } = resource
+  if (!src && resource && typeof resource === 'object' && resource.url) {
+    const { alt: altFromResource, height: fullHeight, width: fullWidth, url } = resource
 
     width = fullWidth!
     height = fullHeight!
     alt = altFromResource || ''
 
-    const cacheTag = resource.updatedAt
-
-    src = getMediaUrl(url, cacheTag)
+    // Extract filename from URL (e.g., 'wavy_p-900x900.jpg' from '/api/media/file/wavy_p-900x900.jpg')
+    const filename = url.split('/').pop()
+    // Construct the R2 URL with cache buster
+    src = `https://pub-31fb143381b14cc5b094ebdba19f7275.r2.dev/blogimages/${filename}?v=${resource.updatedAt || Date.now()}`
   }
 
   const loading = loadingFromProps || (!priority ? 'lazy' : undefined)

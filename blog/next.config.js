@@ -11,7 +11,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       ...[NEXT_PUBLIC_SERVER_URL,
-      'https://i.postimg.cc/Fd7JkGjV/wavy-p.jpg', "https://app.pypes.dev", "https://cdn.allthepics.net"].map((item) => {
+      'https://i.postimg.cc/Fd7JkGjV/wavy-p.jpg', "https://app.pypes.dev", "https://cdn.allthepics.net", "https://pub-31fb143381b14cc5b094ebdba19f7275.r2.dev"].map((item) => {
         const url = new URL(item)
 
         return {
