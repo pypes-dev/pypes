@@ -56,13 +56,8 @@ export function BlogPosts({ posts }: BlogPostProps) {
 
 export const SingleBlogCard = ({ post }: { post: Post }) => {
     const readTime = getReadTime(post.content);
-    console.log('~post ', post)
-    const imageUrl = typeof post.heroImage === 'object' && post.heroImage?.url
-        ? post.heroImage.url
-        : '/dalle-5.webp';
-    const imageAlt = typeof post.heroImage === 'object'
-        ? post.heroImage?.alt || post.title
-        : post.title;
+    const imageUrl = 'https://i.postimg.cc/Fd7JkGjV/wavy-p.jpg';
+    const imageAlt = 'Pypes wavy P logo';
 
     return (
         <article
